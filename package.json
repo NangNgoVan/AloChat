@@ -6,6 +6,8 @@
     "start": "node ./bin/www"
   },
   "dependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-react-app": "^3.1.2",
     "body-parser": "^1.18.3",
     "cookie-parser": "~1.4.3",
     "debug": "~2.6.0",
@@ -13,5 +15,21 @@
     "morgan": "^1.9.1",
     "pug": "~2.0.0-beta10",
     "serve-favicon": "^2.5.0"
-  }
+  },
+  "description": "",
+  "main": "app.js",
+  "devDependencies": {
+    "@babel/preset-react": "^7.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/NangNgoVan/AloChat.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/NangNgoVan/AloChat/issues"
+  },
+  "homepage": "https://github.com/NangNgoVan/AloChat#readme"
 }
