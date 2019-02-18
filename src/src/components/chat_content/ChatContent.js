@@ -1,3 +1,5 @@
+var React = require('react');
+
 class ChatContent extends React.Component {
   render() {
     return(
@@ -58,5 +60,6 @@ class ChatContent extends React.Component {
     )
   }
 }
+
 
 module.exports = ChatContent;
