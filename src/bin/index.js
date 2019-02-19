@@ -6,27 +6,24 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-var ContactList = require('./components/contacts/ContactList.js');
-var ChatContent = require('./components/chat_content/ChatContent.js');
+var ChatView = require('./components/chat/ChatView.js');
 
 var ChatApp = function (_React$Component) {
   _inherits(ChatApp, _React$Component);
 
-  function ChatApp() {
+  function ChatApp(props) {
     _classCallCheck(this, ChatApp);
 
-    return _possibleConstructorReturn(this, (ChatApp.__proto__ || Object.getPrototypeOf(ChatApp)).apply(this, arguments));
+    var _this = _possibleConstructorReturn(this, (ChatApp.__proto__ || Object.getPrototypeOf(ChatApp)).call(this, props));
+
+    _this.state = { currentUser: { id: 0, name: 'Ngô Văn Năng', preview: 'Xin chào!', status: 'active', avatar: 'http://emilcarlsson.se/assets/harveyspecter.png' } };
+    return _this;
   }
 
   _createClass(ChatApp, [{
     key: 'render',
     value: function render() {
-      return React.createElement(
-        'div',
-        { id: 'frame' },
-        React.createElement(ContactList, null),
-        React.createElement(ChatContent, null)
-      );
+      return React.createElement(ChatView, { currentUser: this.state.currentUser });
     }
   }]);
 

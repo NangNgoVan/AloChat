@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 (function(){function r(e,n,t){function o(i,f){if(!n[i]){if(!e[i]){var c="function"==typeof require&&require;if(!f&&c)return c(i,!0);if(u)return u(i,!0);var a=new Error("Cannot find module '"+i+"'");throw a.code="MODULE_NOT_FOUND",a}var p=n[i]={exports:{}};e[i][0].call(p.exports,function(r){var n=e[i][1][r];return o(n||r)},p,p.exports,r,e,n,t)}return n[i].exports}for(var u="function"==typeof require&&require,i=0;i<t.length;i++)o(t[i]);return o}return r})()({1:[function(require,module,exports){
+=======
+(function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);var f=new Error("Cannot find module '"+o+"'");throw f.code="MODULE_NOT_FOUND",f}var l=n[o]={exports:{}};t[o][0].call(l.exports,function(e){var n=t[o][1][e];return s(n?n:e)},l,l.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({1:[function(require,module,exports){
+>>>>>>> cad92594727c473edb08352a9b42283f1625690b
 // shim for using process in browser
 var process = module.exports = {};
 
@@ -2351,6 +2355,7 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 var React = require('react');
 
 var ChatContent = function (_React$Component) {
+<<<<<<< HEAD
   _inherits(ChatContent, _React$Component);
 
   function ChatContent() {
@@ -2490,6 +2495,108 @@ var ChatContent = function (_React$Component) {
   }]);
 
   return ChatContent;
+=======
+	_inherits(ChatContent, _React$Component);
+
+	function ChatContent(props) {
+		_classCallCheck(this, ChatContent);
+
+		var _this = _possibleConstructorReturn(this, (ChatContent.__proto__ || Object.getPrototypeOf(ChatContent)).call(this, props));
+
+		_this.state = { message: '', messages: [{ text: 'xin chào', id: 0, type: 'sent' }, { text: 'Hi!', id: 1, type: 'replies' }] };
+
+		_this.textingMessage = _this.textingMessage.bind(_this);
+		_this.handleMessage = _this.handleMessage.bind(_this);
+		return _this;
+	}
+
+	_createClass(ChatContent, [{
+		key: 'textingMessage',
+		value: function textingMessage(event) {
+			this.setState({ message: event.target.value });
+		}
+	}, {
+		key: 'handleMessage',
+		value: function handleMessage(event) {
+			switch (event.key) {
+				case 'Enter':
+					var messages = this.state.messages.slice(0);
+					if (this.state.message == '') return;
+					// send event.
+					messages.push({ text: this.state.message, type: 'replies' });
+
+					this.setState({ message: '',
+						messages: messages });
+					break;
+			}
+		}
+	}, {
+		key: 'render',
+		value: function render() {
+			return React.createElement(
+				'div',
+				{ 'class': 'content' },
+				React.createElement(
+					'div',
+					{ 'class': 'contact-profile' },
+					React.createElement('img', { src: this.props.currentContact != null ? this.props.currentContact.avatar : '', alt: '' }),
+					React.createElement(
+						'p',
+						null,
+						this.props.currentContact != null ? this.props.currentContact.name : ''
+					),
+					React.createElement(
+						'div',
+						{ 'class': 'social-media' },
+						React.createElement('i', { 'class': 'fa fa-facebook', 'aria-hidden': 'true' }),
+						React.createElement('i', { 'class': 'fa fa-twitter', 'aria-hidden': 'true' }),
+						React.createElement('i', { 'class': 'fa fa-instagram', 'aria-hidden': 'true' })
+					)
+				),
+				React.createElement(
+					'div',
+					{ 'class': 'messages' },
+					React.createElement(
+						'ul',
+						null,
+						this.state.messages.map(function (m) {
+							return React.createElement(
+								'li',
+								{ 'class': m.type, key: m.id },
+								React.createElement('img', { src: 'http://emilcarlsson.se/assets/mikeross.png', alt: '' }),
+								React.createElement(
+									'p',
+									null,
+									m.text
+								)
+							);
+						})
+					)
+				),
+				React.createElement(
+					'div',
+					{ 'class': 'message-input' },
+					React.createElement(
+						'div',
+						{ 'class': 'wrap' },
+						React.createElement('input', { type: 'text', placeholder: 'Nh\u1EADp tin nh\u1EAFn ...',
+							value: this.state.message,
+							onChange: this.textingMessage,
+							onKeyDown: this.handleMessage }),
+						React.createElement('i', { 'class': 'fa fa-paperclip attachment', 'aria-hidden': 'true' }),
+						React.createElement(
+							'button',
+							{ 'class': 'submit' },
+							React.createElement('i', { 'class': 'fa fa-paper-plane', 'aria-hidden': 'true' })
+						)
+					)
+				)
+			);
+		}
+	}]);
+
+	return ChatContent;
+>>>>>>> cad92594727c473edb08352a9b42283f1625690b
 }(React.Component);
 
 module.exports = ChatContent;
@@ -2503,6 +2610,7 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
 var React = require('react');
+<<<<<<< HEAD
 
 var ContactList = function (_React$Component) {
   _inherits(ContactList, _React$Component);
@@ -2526,10 +2634,47 @@ var ContactList = function (_React$Component) {
       this.setState({
         contacts: this.state.contacts.filter(function (e) {
           return e.name.includes(event.target.value);
+=======
+var ChatContent = require('./ChatContent.js');
+
+var ChatView = function (_React$Component) {
+  _inherits(ChatView, _React$Component);
+
+  function ChatView(props) {
+    _classCallCheck(this, ChatView);
+
+    var _this = _possibleConstructorReturn(this, (ChatView.__proto__ || Object.getPrototypeOf(ChatView)).call(this, props));
+
+    _this.state = {
+      contacts: [{ id: 0, name: 'Ngô Văn Năng', preview: 'Xin chào!', status: 'active', avatar: 'http://emilcarlsson.se/assets/harveyspecter.png' }, { id: 1, name: 'Nguyễn Văn A', preview: 'Ai?', status: 'busy', avtar: 'http://emilcarlsson.se/assets/harveyspecter.png' }],
+      filters: [],
+      currentContact: null,
+      currentUser: props.currentUser
+    };
+
+    _this.filterContact = _this.filterContact.bind(_this);
+    _this.loadChatContent = _this.loadChatContent.bind(_this);
+    return _this;
+  }
+
+  _createClass(ChatView, [{
+    key: 'componentDidMount',
+    value: function componentDidMount() {
+      this.setState({ filters: this.state.contacts,
+        currentContact: this.state.contacts[0] });
+    }
+  }, {
+    key: 'filterContact',
+    value: function filterContact(event) {
+      this.setState({
+        filters: this.state.contacts.filter(function (e) {
+          return e.name.toLowerCase().includes(event.target.value.toLowerCase());
+>>>>>>> cad92594727c473edb08352a9b42283f1625690b
         })
       });
     }
   }, {
+<<<<<<< HEAD
     key: 'render',
     value: function render() {
       return React.createElement(
@@ -2694,15 +2839,206 @@ var ContactList = function (_React$Component) {
             )
           )
         )
+=======
+    key: 'loadChatContent',
+    value: function loadChatContent(contact) {
+      this.setState({ currentContact: contact });
+    }
+  }, {
+    key: 'render',
+    value: function render() {
+      var _this2 = this;
+
+      var currentContact = this.state.currentContact;
+      var currentUser = this.state.currentUser;
+      return React.createElement(
+        'div',
+        { id: 'frame' },
+        React.createElement(
+          'div',
+          { id: 'sidepanel' },
+          React.createElement(
+            'div',
+            { id: 'profile' },
+            React.createElement(
+              'div',
+              { 'class': 'wrap' },
+              React.createElement('img', { id: 'profile-img', src: this.props.currentUser.avatar, 'class': 'online', alt: '' }),
+              React.createElement(
+                'p',
+                null,
+                this.props.currentUser.name
+              ),
+              React.createElement('i', { 'class': 'fa fa-chevron-down expand-button', 'aria-hidden': 'true' }),
+              React.createElement(
+                'div',
+                { id: 'status-options' },
+                React.createElement(
+                  'ul',
+                  null,
+                  React.createElement(
+                    'li',
+                    { id: 'status-online', 'class': 'active' },
+                    React.createElement('span', { 'class': 'status-circle' }),
+                    ' ',
+                    React.createElement(
+                      'p',
+                      null,
+                      'Online'
+                    )
+                  ),
+                  React.createElement(
+                    'li',
+                    { id: 'status-away' },
+                    React.createElement('span', { 'class': 'status-circle' }),
+                    ' ',
+                    React.createElement(
+                      'p',
+                      null,
+                      'Away'
+                    )
+                  ),
+                  React.createElement(
+                    'li',
+                    { id: 'status-busy' },
+                    React.createElement('span', { 'class': 'status-circle' }),
+                    ' ',
+                    React.createElement(
+                      'p',
+                      null,
+                      'Busy'
+                    )
+                  ),
+                  React.createElement(
+                    'li',
+                    { id: 'status-offline' },
+                    React.createElement('span', { 'class': 'status-circle' }),
+                    ' ',
+                    React.createElement(
+                      'p',
+                      null,
+                      'Offline'
+                    )
+                  )
+                )
+              ),
+              React.createElement(
+                'div',
+                { id: 'expanded' },
+                React.createElement(
+                  'label',
+                  { 'for': 'twitter' },
+                  React.createElement('i', { 'class': 'fa fa-facebook fa-fw', 'aria-hidden': 'true' })
+                ),
+                React.createElement('input', { name: 'twitter', type: 'text', value: 'mikeross' }),
+                React.createElement(
+                  'label',
+                  { 'for': 'twitter' },
+                  React.createElement('i', { 'class': 'fa fa-twitter fa-fw', 'aria-hidden': 'true' })
+                ),
+                React.createElement('input', { name: 'twitter', type: 'text', value: 'ross81' }),
+                React.createElement(
+                  'label',
+                  { 'for': 'twitter' },
+                  React.createElement('i', { 'class': 'fa fa-instagram fa-fw', 'aria-hidden': 'true' })
+                ),
+                React.createElement('input', { name: 'twitter', type: 'text', value: 'mike.ross' })
+              )
+            )
+          ),
+          React.createElement(
+            'div',
+            { id: 'search' },
+            React.createElement(
+              'label',
+              { 'for': '' },
+              React.createElement('i', { 'class': 'fa fa-search', 'aria-hidden': 'true' })
+            ),
+            React.createElement('input', { type: 'text', placeholder: 'T\xECm ki\u1EBFm li\xEAn h\u1EC7...', onChange: this.filterContact })
+          ),
+          React.createElement(
+            'div',
+            { id: 'contacts' },
+            React.createElement(
+              'ul',
+              null,
+              this.state.filters.map(function (contact) {
+                return React.createElement(
+                  'li',
+                  { 'class': contact.id == _this2.state.currentContact.id ? "contact active" : "contact",
+                    key: contact.id, onClick: function onClick() {
+                      return _this2.loadChatContent(contact);
+                    } },
+                  React.createElement(
+                    'div',
+                    { 'class': 'wrap' },
+                    React.createElement('span', { 'class': 'contact-status busy' }),
+                    React.createElement('img', { src: 'http://emilcarlsson.se/assets/harveyspecter.png', alt: '' }),
+                    React.createElement(
+                      'div',
+                      { 'class': 'meta' },
+                      React.createElement(
+                        'p',
+                        { 'class': 'name' },
+                        contact.name
+                      ),
+                      React.createElement(
+                        'p',
+                        { 'class': 'preview' },
+                        contact.preview
+                      )
+                    )
+                  )
+                );
+              })
+            )
+          ),
+          React.createElement(
+            'div',
+            { id: 'bottom-bar' },
+            React.createElement(
+              'button',
+              { id: 'addcontact' },
+              React.createElement('i', { 'class': 'fa fa-user-plus fa-fw', 'aria-hidden': 'true' }),
+              ' ',
+              React.createElement(
+                'span',
+                null,
+                'Th\xEAm li\xEAn h\u1EC7'
+              )
+            ),
+            React.createElement(
+              'button',
+              { id: 'settings' },
+              React.createElement('i', { 'class': 'fa fa-cog fa-fw', 'aria-hidden': 'true' }),
+              ' ',
+              React.createElement(
+                'span',
+                null,
+                'C\xE0i \u0111\u1EB7t'
+              )
+            )
+          )
+        ),
+        React.createElement(ChatContent, { currentContact: this.state.currentContact })
+>>>>>>> cad92594727c473edb08352a9b42283f1625690b
       );
     }
   }]);
 
+<<<<<<< HEAD
   return ContactList;
 }(React.Component);
 
 module.exports = ContactList;
 },{"react":7}],10:[function(require,module,exports){
+=======
+  return ChatView;
+}(React.Component);
+
+module.exports = ChatView;
+},{"./ChatContent.js":8,"react":7}],10:[function(require,module,exports){
+>>>>>>> cad92594727c473edb08352a9b42283f1625690b
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -2711,27 +3047,45 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
+<<<<<<< HEAD
 var ContactList = require('./components/contacts/ContactList.js');
 var ChatContent = require('./components/chat_content/ChatContent.js');
+=======
+var ChatView = require('./components/chat/ChatView.js');
+>>>>>>> cad92594727c473edb08352a9b42283f1625690b
 
 var ChatApp = function (_React$Component) {
   _inherits(ChatApp, _React$Component);
 
+<<<<<<< HEAD
   function ChatApp() {
     _classCallCheck(this, ChatApp);
 
     return _possibleConstructorReturn(this, (ChatApp.__proto__ || Object.getPrototypeOf(ChatApp)).apply(this, arguments));
+=======
+  function ChatApp(props) {
+    _classCallCheck(this, ChatApp);
+
+    var _this = _possibleConstructorReturn(this, (ChatApp.__proto__ || Object.getPrototypeOf(ChatApp)).call(this, props));
+
+    _this.state = { currentUser: { id: 0, name: 'Ngô Văn Năng', preview: 'Xin chào!', status: 'active', avatar: 'http://emilcarlsson.se/assets/harveyspecter.png' } };
+    return _this;
+>>>>>>> cad92594727c473edb08352a9b42283f1625690b
   }
 
   _createClass(ChatApp, [{
     key: 'render',
     value: function render() {
+<<<<<<< HEAD
       return React.createElement(
         'div',
         { id: 'frame' },
         React.createElement(ContactList, null),
         React.createElement(ChatContent, null)
       );
+=======
+      return React.createElement(ChatView, { currentUser: this.state.currentUser });
+>>>>>>> cad92594727c473edb08352a9b42283f1625690b
     }
   }]);
 
@@ -2741,4 +3095,8 @@ var ChatApp = function (_React$Component) {
 ;
 
 ReactDOM.render(React.createElement(ChatApp, null), document.getElementById('root'));
+<<<<<<< HEAD
 },{"./components/chat_content/ChatContent.js":8,"./components/contacts/ContactList.js":9}]},{},[10]);
+=======
+},{"./components/chat/ChatView.js":9}]},{},[10]);
+>>>>>>> cad92594727c473edb08352a9b42283f1625690b
