@@ -61,9 +61,8 @@ var ChatContent = function (_React$Component) {
 					React.createElement(
 						'div',
 						{ 'class': 'social-media' },
-						React.createElement('i', { 'class': 'fa fa-facebook', 'aria-hidden': 'true' }),
-						React.createElement('i', { 'class': 'fa fa-twitter', 'aria-hidden': 'true' }),
-						React.createElement('i', { 'class': 'fa fa-instagram', 'aria-hidden': 'true' })
+						React.createElement('i', { 'class': 'fa fa-phone', 'aria-hidden': 'true' }),
+						React.createElement('i', { 'class': 'fa fa-video-camera', 'aria-hidden': 'true' })
 					)
 				),
 				React.createElement(
@@ -96,12 +95,7 @@ var ChatContent = function (_React$Component) {
 							value: this.state.message,
 							onChange: this.textingMessage,
 							onKeyDown: this.handleMessage }),
-						React.createElement('i', { 'class': 'fa fa-paperclip attachment', 'aria-hidden': 'true' }),
-						React.createElement(
-							'button',
-							{ 'class': 'submit' },
-							React.createElement('i', { 'class': 'fa fa-paper-plane', 'aria-hidden': 'true' })
-						)
+						React.createElement('i', { 'class': 'fa fa-paperclip attachment', 'aria-hidden': 'true' })
 					)
 				)
 			);
