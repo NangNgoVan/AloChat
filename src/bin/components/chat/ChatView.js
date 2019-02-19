@@ -18,7 +18,7 @@ var ChatView = function (_React$Component) {
     var _this = _possibleConstructorReturn(this, (ChatView.__proto__ || Object.getPrototypeOf(ChatView)).call(this, props));
 
     _this.state = {
-      contacts: [{ id: 0, name: 'Ngô Văn Năng', preview: 'Xin chào!', status: 'active', avatar: 'http://emilcarlsson.se/assets/harveyspecter.png' }, { id: 1, name: 'Nguyễn Văn A', preview: 'Ai?', status: 'busy', avtar: 'http://emilcarlsson.se/assets/harveyspecter.png' }],
+      contacts: [{ id: 0, name: 'Ngô Văn Năng', preview: 'Xin chào!', status: 'active', avatar: 'http://emilcarlsson.se/assets/harveyspecter.png' }, { id: 1, name: 'Nguyễn Văn A', preview: 'Ai?', status: 'busy', avatar: 'http://emilcarlsson.se/assets/mikeross.png' }],
       filters: [],
       currentContact: null,
       currentUser: props.currentUser

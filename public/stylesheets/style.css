@@ -592,13 +592,13 @@ body {
 #frame .content .messages ul li p {
   display: inline-block;
   padding: 10px 15px;
-  border-radius: 20px;
-  max-width: 205px;
+  border-radius: 12px;
+  max-width: 70%;
   line-height: 130%;
 }
 @media screen and (min-width: 735px) {
   #frame .content .messages ul li p {
-    max-width: 300px;
+    /*max-width: 300px;*/
   }
 }
 #frame .content .message-input {
@@ -614,9 +614,9 @@ body {
   font-family: "proxima-nova",  "Source Sans Pro", sans-serif;
   float: left;
   border: none;
-  width: calc(100% - 90px);
+  width: calc(100%);
   padding: 11px 32px 10px 8px;
-  font-size: 0.8em;
+  /*font-size: 0.8em;*/
   color: #32465a;
 }
 @media screen and (max-width: 735px) {
@@ -629,12 +629,12 @@ body {
 }
 #frame .content .message-input .wrap .attachment {
   position: absolute;
-  right: 60px;
+  right: 30px;
   z-index: 4;
   margin-top: 10px;
   font-size: 1.1em;
   color: #435f7a;
-  opacity: .5;
+  /*opacity: .5;*/
   cursor: pointer;
 }
 @media screen and (max-width: 735px) {
@@ -665,4 +665,15 @@ body {
 }
 #frame .content .message-input .wrap button:focus {
   outline: none;
+}
+.background-div {
+  position:fixed;
+  background-image: url('/images/background.png');
+  width:100%;
+  height:100%;
+  filter: blur(5px);
+  -webkit-filter: blur(5px);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }

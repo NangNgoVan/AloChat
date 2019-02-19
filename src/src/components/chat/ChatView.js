@@ -8,7 +8,7 @@ class ChatView extends React.Component {
     this.state = {
       contacts: [
         {id: 0, name:'Ngô Văn Năng', preview:'Xin chào!', status:'active', avatar:'http://emilcarlsson.se/assets/harveyspecter.png'},
-        {id: 1, name: 'Nguyễn Văn A', preview: 'Ai?', status: 'busy', avtar:'http://emilcarlsson.se/assets/harveyspecter.png'}
+        {id: 1, name: 'Nguyễn Văn A', preview: 'Ai?', status: 'busy', avatar:'http://emilcarlsson.se/assets/mikeross.png'}
       ],
       filters: [],
       currentContact:null,

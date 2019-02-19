@@ -37,9 +37,8 @@ class ChatContent extends React.Component {
             <img src={this.props.currentContact != null ? this.props.currentContact.avatar : ''} alt="" />
             <p>{this.props.currentContact != null ? this.props.currentContact.name : ''}</p>
             <div class="social-media">
-              <i class="fa fa-facebook" aria-hidden="true"></i>
-              <i class="fa fa-twitter" aria-hidden="true"></i>
-               <i class="fa fa-instagram" aria-hidden="true"></i>
+              <i class="fa fa-phone" aria-hidden="true"></i>
+              <i class="fa fa-video-camera" aria-hidden="true"></i>
             </div>
           </div>
           <div class="messages">
@@ -61,7 +60,6 @@ class ChatContent extends React.Component {
             	onChange={this.textingMessage} 
             	onKeyDown={this.handleMessage}/>
             <i class="fa fa-paperclip attachment" aria-hidden="true"></i>
-            <button class="submit"><i class="fa fa-paper-plane" aria-hidden="true"></i></button>
             </div>
           </div>
         </div>
