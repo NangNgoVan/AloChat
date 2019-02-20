@@ -13,8 +13,9 @@ block content
     }
 
     .card-signin {
-      border: 1px solid gray;
+      border: 0;
       border-radius: 1rem;
+      opacity: 0.9;
       /*box-shadow: 0 0.5rem 1rem 0 rgba(0, 0, 0, 0.1);*/
     }
 
@@ -112,19 +113,21 @@ block content
       color: white;
       background-color: #3b5998;
     }
+  div(class="background-div")
   .container
     .row
       .col-sm-9.col-md-7.col-lg-4.mx-auto
         .card.card-signin.my-5
           .card-body
             h1.card-title.text-center Đăng ký
-            form.form-signin
+            form.form-signin(method="post" action="/auth/signup")
               .form-label-group
-                input#inputEmail.form-control(type='email', placeholder='Email address', required='', autofocus='')
+                input#inputEmail.form-control(type='email', placeholder='Email address', required='', autofocus='',
+                  name="email")
                 label(for='inputEmail') Email
               .form-label-group
-                input#inputPassword.form-control(type='password', placeholder='Password', required='')
-                label(for='inputPassword') Mật khẩu mởi
+                input#inputPassword.form-control(type='password', placeholder='Password', required='', name="password")
+                label(for='inputPassword') Mật khẩu mới
               .form-label-group
                 input#inputConfirmPassword.form-control(type='password', placeholder='Password', required='')
                 label(for='inputConfirmPassword') Nhập lại mật khẩu

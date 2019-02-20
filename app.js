@@ -6,11 +6,23 @@ var bodyParser = require('body-parser');
 var logger = require('morgan');
 var session = require('express-session');
 
+var mongoose = require('mongoose');
+
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var authRouter = require('./routes/auth');
 
 var app = express();
+
+// config
+require('dotenv').config();
+
+// db connection
+var db_connection_str = `mongodb://${process.env.DB_USER}:${process.env.DB_PW}@ds341825.mlab.com:41825/${process.env.DB_HOST}`;
+console.log(db_connection_str);
+mongoose.connect(db_connection_str, {useNewUrlParser: true});
+var db = mongoose.connection;
+db.on('error', console.error.bind(console, 'lỗi kết nối:'));
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
