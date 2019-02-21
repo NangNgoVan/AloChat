@@ -12,7 +12,7 @@ class AuthService {
 		})
 	}
 	static getUserByAuth(username, password, callback) {
-		User.findOne({email:username, password:password}).exec(callback)
+		User.findOne({email:username}).exec(callback)
 	}
 }
 
