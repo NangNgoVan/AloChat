@@ -128,8 +128,12 @@ block content
               button.btn.btn-lg.btn-primary.btn-block.text-uppercase(type='submit') Gửi email
               hr
               if sent == 'true'
-                small.form-text.text-muted.text-danger
+                small.form-text.text-muted
                   span.text-success Đã gửi mã xác nhận đến địa chỉ email của bạn, nếu chưa nhận được mã, nhấp&nbsp"GỬI EMAIL" lại.
+                hr
+              if sent == 'false'
+                small.form-text.text-muted
+                  span.text-danger Lỗi khi gửi mã xác nhận, vui lòng kiểm tra lại địa chỉ email.
                 hr
               a(href="/auth/login", style="right:0") Quay lại đăng nhập!
   script(src="/javascripts/signup.js")

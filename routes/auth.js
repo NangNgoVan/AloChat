@@ -64,14 +64,16 @@ router.post('/signup', function(req, res, next) {
 router.get('/get_email', function(req, res, next) {
 	var sent = req.query.sent;
 	var email = req.query.email;
-	if(sent == 'true')
+	if(sent)
 		res.render('get_email', {sent: sent, email: email});
 	else res.render('get_email');
 })
 
 router.post('/get_email', function(req, res, next) {
 	var email = req.body.email;
-	res.redirect(`/auth/get_email?sent=true&email=${email}`);
+	if (true)
+		res.redirect(`/auth/get_email?sent=false&email=${email}`);
+	else res.redirect(`/auth/get_email?sent=true&email=${email}`);
 });
 
 module.exports = router;
