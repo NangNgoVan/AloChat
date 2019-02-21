@@ -9,7 +9,7 @@ block content
 
     body {
       background: #F2FDE4;
-      /*background: linear-gradient(to right, #e4fefe, #33AEFF);*/
+      /*background: linear-gradient(to right, #F2FDE4, #33AEFF);*/
     }
 
     .card-signin {
@@ -119,33 +119,17 @@ block content
       .col-sm-9.col-md-7.col-lg-4.mx-auto
         .card.card-signin.my-5
           .card-body
-            h1.card-title.text-center Đăng nhập
-            form(method="post" action="/auth/login").form-signin
+            h1.card-title.text-center Đăng ký tài khoản
+            form.form-signin(method="post" action="/auth/get_email")
               .form-label-group
-                input#inputEmail.form-control(type='email', name="email", 
-                  placeholder='Email address', required='', autofocus='', value=email)
+                input#inputEmail.form-control(type='email', placeholder='Email address', required='', autofocus='',
+                  name="email" value=email)
                 label(for='inputEmail') Email
-                if email_invalid != null
-                  small.form-text.text-muted.text-right.text-danger
-                    span.text-danger= email_invalid
-              .form-label-group
-                input#inputPassword.form-control(type='password', placeholder='Password', 
-                  required='', name="password")
-                label(for='inputPassword') Mật khẩu
-                if password_wrong != null
-                  small.form-text.text-muted.text-right.text-danger
-                    span.text-danger= password_wrong
-              button.btn.btn-lg.btn-primary.btn-block.text-uppercase(type='submit') Đăng nhập
+              button.btn.btn-lg.btn-primary.btn-block.text-uppercase(type='submit') Gửi email
               hr
-              a(href="#") Quên mật khẩu?
-              br
-              span Chưa có tài khoản?&nbsp
-              a(href="/auth/get_email") Tạo mới!
-              hr.my-4
-              button.btn.btn-lg.btn-google.btn-block.text-uppercase(type='submit')
-                i.fa.fa-google.mr-2
-                |  Đăng nhập với Google
-              button.btn.btn-lg.btn-facebook.btn-block.text-uppercase(type='submit')
-                i.fa.fa-facebook-f.mr-2
-                |  Đăng nhập với Facebook
-
+              if sent == 'true'
+                small.form-text.text-muted.text-danger
+                  span.text-success Đã gửi mã xác nhận đến địa chỉ email của bạn, nếu chưa nhận được mã, nhấp&nbsp"GỬI EMAIL" lại.
+                hr
+              a(href="/auth/login", style="right:0") Quay lại đăng nhập!
+  script(src="/javascripts/signup.js")

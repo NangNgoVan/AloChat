@@ -119,18 +119,25 @@ block content
       .col-sm-9.col-md-7.col-lg-4.mx-auto
         .card.card-signin.my-5
           .card-body
-            h1.card-title.text-center Đăng ký
+            h1.card-title.text-center Đăng ký tài khoản
             form.form-signin(method="post" action="/auth/signup")
               .form-label-group
-                input#inputEmail.form-control(type='email', placeholder='Email address', required='', autofocus='',
-                  name="email")
-                label(for='inputEmail') Email
+                input(type="hidden" value=token name="token")
               .form-label-group
                 input#inputPassword.form-control(type='password', placeholder='Password', required='', name="password")
                 label(for='inputPassword') Mật khẩu mới
               .form-label-group
-                input#inputConfirmPassword.form-control(type='password', placeholder='Password', required='')
+                input#inputConfirmPassword.form-control(type='password', placeholder='Password', required='' name="confirm_password")
                 label(for='inputConfirmPassword') Nhập lại mật khẩu
+                if error == 'token_invalid'
+                  hr
+                  small.form-text.text-muted.text-right.text-danger
+                    span.text-danger Mã xác thực không hợp lệ!
+                if error == 'pass_uncompared'
+                  hr
+                  small.form-text.text-muted.text-right.text-danger
+                    span.text-danger Xác nhận mật khẩu không trùng khớp!
               button.btn.btn-lg.btn-primary.btn-block.text-uppercase(type='submit') Tạo tài khoản mới
-              br
+              hr
               a(href="/auth/login", style="right:0") Quay lại đăng nhập!
+  script(src="/javascripts/signup.js")
